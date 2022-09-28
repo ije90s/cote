@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //answer가 arr값이 변경하면 변경한 값 그대로 반영(얕은 복사)
+            //참조: https://intrepidgeeks.com/tutorial/javascript-light-copy-and-deep-copy
+            //splice() 해당 값 제거
+            function solution(arr){
+                let answer=arr, target=[];;
+                let sum = arr.reduce((pre, current) => pre+current, 0);
+                for(let i=0;i<8;i++){
+                    for(let j=i;j<9;j++){
+                        if((sum-(arr[i]+arr[j])) === 100){
+                            arr.splice(j,1);
+                            arr.splice(i,1);
+                        }
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
