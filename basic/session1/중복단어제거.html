@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                // s.forEach(element => {
+                //     if(!answer.includes(element)) answer.push(element);   
+                // });
+                answer = s.filter((v, i) => i === s.indexOf(v));
+
+                return answer.join('\n');
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

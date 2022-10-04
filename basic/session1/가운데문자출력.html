@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                // const firstIndex = Math.floor(s.length/2);
+                // answer = s.length%2 === 0 ? s.slice(firstIndex-1, firstIndex+1) : s.slice(firstIndex, firstIndex+1);
+                const mid = Math.floor(s.length/2);
+                answer = s.length%2 === 0 ? s.substr(mid-1, 2) : s.substr(mid, 1);
+                return answer;
+            }
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>
