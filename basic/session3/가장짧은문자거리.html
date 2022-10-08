@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                let answer=[];
+                //let before=Number.MAX_SAFE_INTEGER;
+                // for(let i=0; i<s.length;i++){
+                //     if(t===s[i]){
+                //         answer.push(0);
+                //         before=i;
+                //     }else{
+                //         const after = s.indexOf(t, i);
+                //         const beforeDistance = Math.abs(before-i);
+                //         const afterDistance = Math.abs(after-i);
+                //         if(beforeDistance < afterDistance) answer.push(beforeDistance);
+                //         else if(afterDistance < beforeDistance) answer.push(afterDistance);
+                //         else answer.push(beforeDistance);
+                //     }
+                // }
+                let max = 1000;
+                //정방향 순환
+                for(let i=0; i< s.length;i++){
+                    if(s[i] === t){
+                        max=0;
+                        answer.push(max);
+                    }else{
+                        max++;
+                        answer.push(max);
+                    }
+                }
+                max=1000;
+                //역방향 순환
+                for(let i=s.length-1; i>=0; i--){
+                    if(s[i]===t){
+                        max=0;
+                    }else{
+                        max++;
+                        answer[i] = Math.min(max, answer[i]);
+                    }
+                }
+                return answer.join(' ');
+            }
+            
+            let str="teachermode";
+            console.log(solution(str, 'e'));
+        </script>
+    </body>
+</html>

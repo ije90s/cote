@@ -13,4 +13,8 @@
   - subStr(start, count): start 인덱스부터 count(개수)까지 문자열 자르기
 
 - indexOf(찾을 문자, start)
+
   - 해당 문자의 인덱스 값 리턴 > start값이 없으면 처음부터 추적. start값이 있으면, start 인덱스부터 인덱스를 찾음
+
+- isNaN(x)
+  - 숫자인지 판별. 숫자이면 false, 숫자가 아니면 true
