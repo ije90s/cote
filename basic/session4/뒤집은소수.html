@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function isPrime(value){
+                let isPirme = true;
+                // 제곱근
+                // for(let i=2; i*i<=value;i++){
+                //     if(value%i===0){
+                //         return false;
+                //     }
+                // }
+                if(value===1) return false;
+                for(let i=2; i<=Math.floor(value/2);i++){
+                    //반복문 절반만 순회 (1*16, 2*8, 4*4, 8*2, 16*1)
+                    if(value%i===0) return false;
+                }
+                return isPirme;
+            }
+
+            function reverseNum(value){
+                let str=0;
+                while(value){
+                    let x = value%10;
+                    str=str*10+x;
+                    value = Math.floor(value/10);
+                }
+                return parseInt(str);
+            }
+
+            function solution(arr){
+                let answer=[];
+                // for(let i=0; i<arr.length; i++){
+                //     let value = reverseNum(arr[i]);
+                //     if(isPrime(value)) answer.push(value);
+                // }
+                for(let x of arr){
+                    let res=Number(x.toString().split('').reverse().join(''));
+                    if(isPrime(res)) answer.push(res);
+                }
+                return answer.join(" ");
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
