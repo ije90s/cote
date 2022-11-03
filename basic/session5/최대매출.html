@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //슬라이딩 윈도우 O(n^2) : 창문을 밀듯이 배열 찾기
+            function solution(k, arr){
+                let answer=0, sum=0;
+                // while(rt<arr.length){
+                //     sum+=arr[rt];
+                //     if(rt===(k-1+lt)){
+                //         if(sum>answer) answer=sum;
+                //         lt++;
+                //         rt=lt;
+                //         sum=0;
+                //     }else rt++;
+                // }
+                for(let i=0; i<k;i++) sum+=arr[i];
+                answer=sum;
+                for(let i=k;i<arr.length;i++){
+                    sum+=arr[i]-arr[i-k];
+                    answer=Math.max(answer, sum);
+                }            
+                return answer;
+            }
+            
+            let a=[12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+            console.log(solution(3, a));
+        </script>
+    </body>
+</html>
