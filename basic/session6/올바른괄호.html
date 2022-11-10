@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // (())() > 개수는 짝수이나, 닫는 괄호가 먼저 나와서 NO
+            function solution(s){
+                let answer="YES"; 
+                let arr = [];
+                for(let x of s){
+                    if(x === '(') arr.push(x);
+                    else {
+                        if(arr.length===0) return "NO"; 
+                        arr.pop();
+                    }
+                }
+                if(arr.length > 0) return "NO";
+                return answer;
+            }
+            
+            let a="(()(()))(()";
+            //let a ="(())()";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
