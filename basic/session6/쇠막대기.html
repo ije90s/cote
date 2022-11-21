@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //괄호 문제 대부분은 스택으로 풀이 
+            function solution(s){
+                let answer=0;
+                let stack=[];
+                for(let i=0;i<s.length;i++){
+                    if(s[i]==='(') stack.push(s[i]);
+                    else{
+                        stack.pop(); //먼저 pop을 한 다음에 계산(계산 후에 pop 처리하면, 레이저의 여는 괄호까지 포함)
+                        if(s[i-1]==='(') { //레이저
+                            answer+=stack.length;
+                        }else answer++; //막대기의 끝을 만나면, 막대기 한조각만 나옴
+                    }
+                }
+
+                return answer;
+            }
+    
+            let a="()(((()())(())()))(())";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
