@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(array,commands){  
+                let answer=[];
+                for(let i=0;i<commands.length;i++){
+                    let start=commands[i][0];
+                    let end=commands[i][1];
+                    let spot=commands[i][2];
+                    let value=array.slice(start-1, end).sort((a,b) => a-b);
+                    answer.push(value[spot-1]);
+                }
+                return answer;
+            }
+            let a=[1,5,2,6,3,7,4];
+            let b=[[2,5,3],[4,4,1],[1,7,3]]; 
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>

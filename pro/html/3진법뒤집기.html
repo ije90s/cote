@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // toString(): 문자열로 변환하나, 매개변수별로 진법으로 계산
+            // parseInt(x, b): b에 따라 10진법으로 표현
+            // 참조: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+            function solution(n){  
+                let answer=n.toString(3).split('').reverse().join('');
+                return parseInt(answer, 3);
+
+                // while(n>0){
+                //     answer+=n%3;
+                //     n=Math.floor(n/3);
+                // }
+                //return parseInt(answer, 3);
+            }
+            let a=125;
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
