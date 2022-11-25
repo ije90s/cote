@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //참조: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+            function solution(a,b){  
+                return a.reduce((pre, cur, index) => {
+                    return pre+(cur*b[index])
+                }, 0);
+            }
+            let a=[-1,0,1];
+            let b=[1,0,-1]; 
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>

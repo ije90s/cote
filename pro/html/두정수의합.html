@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a,b){
+                // let answer=min=max=0;
+                // if(a===b) return a;
+                // else{
+                //     min=Math.min(a,b);
+                //     max=Math.max(a,b);
+                //     while(min<=max){
+                //         answer+=min;
+                //         min++;
+                //     }
+                // }
+                let answer=0;
+                for(let i=Math.min(a,b);i<=Math.max(a,b);i++){
+                    answer+=i;
+                }  
+                return answer;
+            }
+            let a=5;
+            let b=3; 
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                // let answer=[];
+                // answer.push(arr[0]);
+                // for(let i=1;i<arr.length;i++){
+                //     if(arr[i-1] !== arr[i]) answer.push(arr[i]);
+                // }
+                // return answer;
+                return arr.filter((el, i) => el !== arr[i-1]);
+            }
+            let a=[4,4,4,3,3];
+            console.log(solution(a));
+        </script>
+    </body>
+</html>

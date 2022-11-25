@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(numbers){
+                let answer=[];
+                for(let i=0; i<numbers.length;i++){
+                    for(let j=0; j<numbers.length;j++){
+                        let value = numbers[i]+numbers[j];
+                        if(i!==j && !answer.includes(value)) answer.push(value);
+                    }
+                }  
+                return answer.sort((a,b)=>a-b);
+            }
+            let a=[5,0,2,7];
+            console.log(solution(a));
+        </script>
+    </body>
+</html>

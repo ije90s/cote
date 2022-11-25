@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(x,n){  
+                // let answer=[];
+                // for(let i=0;i<n;i++){
+                //     answer.push((i+1)*x);
+                // }
+                // return answer;
+                return Array(n).fill(x).map((v,i) => v * (i+1));
+            }
+            let a=-4;
+            let b=2; 
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>
