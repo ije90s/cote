@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer='true';
+                let str=[0,0];
+                s=s.toLowerCase();
+                for(let x of s){
+                    if(x==='p') str[0]++;
+                    else str[1]++;
+                }
+                if(str[0]!==str[1]) return 'false';
+                return answer;
+            }
+            let a='Pyy'; 
+            console.log(solution(a));
+        </script>
+    </body>
+</html>

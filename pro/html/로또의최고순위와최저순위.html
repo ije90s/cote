@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(lottos, win_nums){
+                let matchResult=zeroResult=0;
+                let len=lottos.length;
+                let score=[6,6,5,4,3,2,1];
+                for(let i=0;i<len;i++){
+                    let value=lottos[i];
+                    if(value===0) zeroResult++;
+                    else{
+                        for(let j=0;j<len;j++){
+                            if(value===win_nums[j]) matchResult++;
+                        }
+                    }
+                }
+                let rowScore=highScroe=0;
+                if(matchResult===len) rowScore=highScroe=len;
+                else if(zeroResult===len) highScroe=len;
+                else{
+                    rowScore=matchResult;
+                    highScroe=matchResult+zeroResult;
+                }
+
+                return [score[highScroe], score[rowScore]];
+            }
+            let a=[0,0,0,0,0,0];
+            let b=[38,19,20,40,15,25]; 
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>

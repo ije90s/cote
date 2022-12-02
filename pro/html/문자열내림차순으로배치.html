@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                return s.split('').sort((a,b) => {
+                    let asciA=a.charCodeAt(0);
+                    let asciB=b.charCodeAt(0);
+                    if(asciA>asciB) return -1;
+                    if(asciA<asciB) return 1;
+                    if(asciA===asciB) return 0;
+                }).join('');
+            }
+            let a="Zbcdefg";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
