@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                //return Number(s);
+                return s/1; // 묵시적 형변환 *,/으로 계산하면 자동으로 형변환
+                return +s; // string > in로 변환
+            }
+            let a="1234";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>

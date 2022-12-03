@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(price, money, count){
+                let sum=0;
+                for(let i=1;i<count+1;i++){
+                    sum+=price*i;
+                }
+                console.log(sum);
+                return sum-money < 0 ? 0 : sum-money;
+            }
+            let a=3;
+            let b=20;
+            let c=4; 
+            console.log(solution(a,b,c));
+        </script>
+    </body>
+</html>
