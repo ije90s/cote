@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let numbers=['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']; 
+                if(!isNaN(s)) return s; 
+                else{
+                    for(let i=0;i<numbers.length;i++){
+                        if(s.indexOf(numbers[i]) >=0) s=s.replace(numbers[i], i);
+                    }
+                }
+                return s;
+            }
+            let a="123";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>

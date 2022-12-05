@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+
+            function isPrime(value){
+                let isCheck = true; 
+                if(value===1) return false;
+                for(let i=2;i<=Math.floor(value/2);i++){
+                    if(value%i===0) return false;
+                }
+                return isCheck;
+            }
+
+            function solution(numbers){
+                let hash = new Map();
+                let answer = [];
+                for(let i=0;i<numbers.length;i++){
+                    for(let j=0;j<numbers.length;j++){
+                        let num = Number(numbers[i]+numbers[j]);
+                        if(i===j) num = Number(numbers[i]);
+                        if(!hash.has(num)) hash.set(num, 1);
+                        else hash.set(num, hash.get(num)+1);
+                    }
+                }
+
+                for(const key of hash.keys()){
+                    if(isPrime(key)) answer.push(key);
+                }
+                
+                return answer.length;
+            }
+            let a="011";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
