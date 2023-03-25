@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //소수 판별하는 함수
+      function isPrimeNumber(value) {
+        if (value === 1) return false;
+
+        for (let i = 2; i <= Math.sqrt(value); i++) {
+          if (value % i === 0) return false;
+        }
+
+        return true;
+      }
+
+      function solution(a) {
+        let sum = 0;
+
+        for (let i = 1; i <= a; i++) {
+          if (isPrimeNumber(i)) sum += i;
+        }
+
+        return sum;
+      }
+
+      let num = 30;
+      console.log(solution(num));
+    </script>
+  </body>
+</html>

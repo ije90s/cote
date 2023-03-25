@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let student = { a: 0, b: 0, c: 0 };
+        let str = "";
+
+        //a,b,c 학생 채점
+        for (let x of arr) {
+          const { answer, score } = x;
+          if (answer === 1) student["a"] += score;
+          else if (answer === 3) student["b"] += score;
+          else if (answer === 5) student["c"] += score;
+        }
+
+        //가장 높은 점수 획득자 찾기
+        let max = Math.max(...Object.values(student));
+        for (let key in student) {
+          if (max === student[key]) str += `${key}: ${student[key]}, `;
+        }
+        return str.slice(0, -2);
+      }
+
+      //let str="352+*9-";
+      let obj = [
+        { answer: 1, score: 5 },
+        { answer: 5, score: 5 },
+        { answer: 2, score: 4 },
+      ];
+      console.log(solution(obj));
+    </script>
+  </body>
+</html>

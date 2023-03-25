@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //최대공약수 구하는 함수
+      function gcd(a, b) {
+        let min = 0;
+        let result = 0;
+        if (a > b) min = b;
+        else min = a;
+
+        for (let i = 1; i <= min; i++) {
+          if (a % i === 0 && b % i === 0) result = i;
+        }
+        return result;
+      }
+
+      function solution(arr) {
+        let sum = 0;
+
+        //배열의 길이가 3미만이면, 리턴
+        if (arr.length < 3) return arr.length === 2 ? 1 : 0;
+
+        //최소공배수 합산
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            sum += Math.floor((arr[i] * arr[j]) / gcd(arr[i], arr[j]));
+          }
+        }
+        return sum;
+      }
+
+      let num = [1, 2, 3];
+      console.log(solution(num));
+    </script>
+  </body>
+</html>
